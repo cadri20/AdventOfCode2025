@@ -131,6 +131,9 @@
     <ClCompile Include="AdventOfCode2025.cpp" />
     <ClCompile Include="Day1\Day1.cpp" />
     <ClCompile Include="Day1\Dial.cpp" />
+    <ClCompile Include="Day2\Day2.cpp" />
+    <ClCompile Include="Day2\IdRange.cpp" />
+    <ClCompile Include="Day2\IdRangesList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg.json" />
@@ -138,9 +141,15 @@
   <ItemGroup>
     <ClInclude Include="Day1\Day1.h" />
     <ClInclude Include="Day1\Dial.h" />
+    <ClInclude Include="Day2\Day2.h" />
+    <ClInclude Include="Day2\IdRange.h" />
+    <ClInclude Include="Day2\IdRangesList.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day1\Input.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </Text>
+    <Text Include="Day2\Input.txt">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </Text>
   </ItemGroup>
