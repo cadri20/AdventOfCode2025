@@ -8,6 +8,7 @@ private:
 	int position;
 	int maxPosition = 99;
 	int timesLeftAtZero = 0;
+	vector<int> linesWhereLeftAtZero;
 
 public:
 	Dial();

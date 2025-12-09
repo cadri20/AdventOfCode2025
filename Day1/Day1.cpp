@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include "Dial.h"
+#include <iostream>
 using namespace std;
 
 namespace Day1 {
@@ -18,15 +19,16 @@ namespace Day1 {
 		return lines;
 	}
 
-	int Day1::getSolution()
+	void Day1::printSolution()
 	{
 		auto data = getInputFromFile(".\\Day1\\Input.txt");
 
 		Dial dial;
 		dial.processRotations(data);
 
-		return dial.getTimesLeftAtZero();
+		std::cout << "Solution day 1: " << dial.getTimesLeftAtZero();
 	}
+
 }
 
 

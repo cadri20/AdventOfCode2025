@@ -4,8 +4,7 @@
 
 int main()
 {
-    auto solutionDay1 = Day1::getSolution();
-    std::cout << "Solution day 1: " << solutionDay1;
+    Day1::printSolution();
 
 }
 
