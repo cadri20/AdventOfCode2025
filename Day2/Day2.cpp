@@ -11,17 +11,27 @@ using namespace std;
 vector<string> Day2::getInputFromFile(const string& filePath)
 {
 	ifstream file(filePath);
-	std::stringstream buffer;
-	buffer << file.rdbuf();
-	string content = buffer.str();
-	vector<string> tokens = vector<string>();
-	size_t pos = 0;
-	while ((pos = content.find(',')) != string::npos) {
-		tokens.push_back(content.substr(0, pos));
-		content.erase(0, pos + 1);
-	}
-	
-	return tokens;
+    if (!file.is_open())
+        return {}; 
+
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    string content = buffer.str();
+
+    vector<string> tokens;
+    size_t start = 0;
+    size_t pos;
+
+    while ((pos = content.find(',', start)) != string::npos) {
+        tokens.push_back(content.substr(start, pos - start));
+        start = pos + 1;
+    }
+
+    if (start < content.size()) {
+        tokens.push_back(content.substr(start));
+    }
+
+    return tokens;
 }
 
 void Day2::printSolution()

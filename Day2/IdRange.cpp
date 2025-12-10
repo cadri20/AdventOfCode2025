@@ -38,7 +38,7 @@ long long IdRange::getSumInvalidIds()
 bool IdRange::isInvalidId(string id)
 {
 	if (id.size() % 2 != 0)
-		return false;
+		return false;              
 
 	bool isEqual = true;
 	int half = id.size() / 2;
